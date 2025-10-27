@@ -1,0 +1,14 @@
+# CODEOWNERS - Define code ownership for automatic review requests
+# For more information, see: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+# Unless a later match takes precedence, these users will be requested for review when someone opens a pull request.
+* @IOUser755
+
+# Documentation ownership
+/docs/ @IOUser755
+*.md @IOUser755
+
+# CI/CD and workflows
+/.github/workflows/ @IOUser755
+/.github/ @IOUser755
