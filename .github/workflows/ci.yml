@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Validate documentation structure
+      run: |
+        echo "Validating documentation structure..."
+        test -f README.md
+        test -f CONTRIBUTING.md
+        test -f ARCHITECTURE.md
+        test -d docs/adr
+        test -d docs/ai/agents
+        echo "Documentation structure validated successfully!"
+    
+    - name: Check for broken links
+      run: |
+        echo "Link checking would go here"
+    
+    - name: Run linting
+      run: |
+        echo "Linting would go here"
